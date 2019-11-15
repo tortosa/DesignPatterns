@@ -4,7 +4,11 @@ using System.Text;
 
 namespace StrategyPattern.Behavior
 {
-    public class KnifeBehavior
+    public class KnifeBehavior : WeaponBehavior
     {
+        public void UseWeapon()
+        {
+            Console.WriteLine("Using a Knife! Sphhhlt! Sphhhlt!");
+        }
     }
 }

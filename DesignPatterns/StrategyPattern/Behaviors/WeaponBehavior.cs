@@ -4,7 +4,8 @@ using System.Text;
 
 namespace StrategyPattern.Behavior
 {
-    public class WeaponBehavior
+    public interface WeaponBehavior
     {
+        void UseWeapon();
     }
 }

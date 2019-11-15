@@ -4,7 +4,11 @@ using System.Text;
 
 namespace StrategyPattern.Behavior
 {
-    public class BowAndArrowBehavior
+    public class BowAndArrowBehavior : WeaponBehavior
     {
+        public void UseWeapon()
+        {
+            Console.WriteLine("Using a Bow!  >·········->   swoooosh!");
+        }
     }
 }

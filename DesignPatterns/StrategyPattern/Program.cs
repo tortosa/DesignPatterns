@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StrategyPattern.Behavior;
+using StrategyPattern.Characters;
 
 namespace StrategyPattern
 {
@@ -6,7 +7,15 @@ namespace StrategyPattern
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Character character = new Knight();
+            character.Fight();
+            character.SetWeapon(new BowAndArrowBehavior());
+            character.Fight();
+
+            character = new King();
+            character.Fight();
+            character.SetWeapon(new KnifeBehavior());
+            character.Fight();
         }
     }
 }
