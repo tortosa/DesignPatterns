@@ -6,9 +6,9 @@ namespace ObserverPattern.ObserverPattern
 {
     public interface Subject
     {
-        void RegisterObserver();
+        void RegisterObserver(Observer observer);
 
-        void RemoveObserver();
+        void RemoveObserver(Observer observer);
 
         void NotifyObservers();
     }

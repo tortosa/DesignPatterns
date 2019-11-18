@@ -1,45 +1,47 @@
 ﻿using ObserverPattern.ObserverPattern;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ObserverPattern
 {
     public class WeatherData : Subject
     {
+        private List<Observer> observers;
+        private WeatherDto data;
+
+        public WeatherData()
+        {
+            observers = new List<Observer>();
+        }
+
         public void NotifyObservers()
         {
-            throw new NotImplementedException();
+            foreach(Observer observer in observers)
+            {
+                observer.Update(data);
+            }
         }
 
-        public void RegisterObserver()
+        public void RegisterObserver(Observer observer)
         {
-            throw new NotImplementedException();
+            if (!observers.Contains(observer))
+                observers.Add(observer);
         }
 
-        public void RemoveObserver()
+        public void RemoveObserver(Observer observer)
         {
-            throw new NotImplementedException();
+            observers.Remove(observer);
         }
 
-        public float GetTemperature()
+        public void SetMeasurements(WeatherDto data)
         {
-            throw new NotImplementedException();
-        }
-
-        public float GetHumidity()
-        {
-            throw new NotImplementedException();
-        }
-
-        public float GetPressure()
-        {
-            throw new NotImplementedException();
+            this.data = data;
+            MeasurementsChanged();
         }
 
         public void MeasurementsChanged()
         {
-            throw new NotImplementedException();
+            NotifyObservers();
         }
     }
 }

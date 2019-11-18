@@ -6,6 +6,6 @@ namespace ObserverPattern.ObserverPattern
 {
     public interface Observer
     {
-        void Update();
+        void Update(WeatherDto data);
     }
 }

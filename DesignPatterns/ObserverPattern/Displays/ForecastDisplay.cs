@@ -5,16 +5,14 @@ using System.Text;
 
 namespace ObserverPattern.Displays
 {
-    public class ForecastDisplay : Observer, DisplayElement
+    public class ForecastDisplay : BaseDisplay
     {
-        public void Display()
-        {
-            throw new NotImplementedException();
-        }
+        public ForecastDisplay(Subject weatherData) : base(weatherData)
+        { }
 
-        public void Update()
+        public override void Display()
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"ForecastDisplay --- Temperature - {this.data.Temperature}, Pressure - {this.data.Pressure}, Humidity - {this.data.Humidity}");
         }
     }
 }
