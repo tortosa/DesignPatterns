@@ -6,24 +6,13 @@ namespace FactoryPattern
 {
     public class ChicagoStyleCheesePizza : Pizza
     {
-        public void Bake()
+        public ChicagoStyleCheesePizza()
         {
-           Console.WriteLine("Bake " + this.GetType().Name);
-        }
+            name = "Chicago Style Deep Dish Cheese Pizza";
+            dough = "Extra Thick Crust Dough";
+            sauce = "Plum Tomato Sauce";
 
-        public void Box()
-        {
-           Console.WriteLine("Box " + this.GetType().Name);
-        }
-
-        public void Cut()
-        {
-            Console.WriteLine("Cut " + this.GetType().Name);
-        }
-
-        public void Prepare()
-        {
-            Console.WriteLine("Prepare " + this.GetType().Name);
+            toppings.Add("Shredded Mozzarella Cheese");
         }
     }
 }

@@ -10,7 +10,7 @@ namespace FactoryPattern
             nyPizzaStore.OrderPizza("Cheese");
             Console.WriteLine("-----------------");
             PizzaStore chicagoPizzaStore = new ChicagoStylePizzaStore();
-            chicagoPizzaStore.OrderPizza("Pepperoni");
+            chicagoPizzaStore.OrderPizza("Cheese");
         }
     }
 }

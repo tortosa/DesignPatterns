@@ -6,24 +6,18 @@ namespace FactoryPattern
 {
     public class NYStyleCheesePizza : Pizza
     {
-        public void Bake()
+        public NYStyleCheesePizza()
         {
-           Console.WriteLine("Bake " + this.GetType().Name);
+            name = "NY Style Sauce and Cheese Pizza";
+            dough = "Thin Crust Dough";
+            sauce = "Marinara Sauce";
+
+            toppings.Add("Grated Reggiano Cheese");
         }
 
-        public void Box()
+        public override void Cut()
         {
-           Console.WriteLine("Box " + this.GetType().Name);
-        }
-
-        public void Cut()
-        {
-            Console.WriteLine("Cut " + this.GetType().Name);
-        }
-
-        public void Prepare()
-        {
-            Console.WriteLine("Prepare " + this.GetType().Name);
+            Console.WriteLine("Cutting the pizza into square slices ");
         }
     }
 }

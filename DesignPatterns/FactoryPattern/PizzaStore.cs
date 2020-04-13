@@ -8,9 +8,7 @@ namespace FactoryPattern
     {
         public Pizza OrderPizza(string type)
         {
-            Pizza pizza;
-
-            pizza = CreatePizza(type);
+            var pizza = CreatePizza(type);
 
             pizza.Prepare();
             pizza.Bake();
