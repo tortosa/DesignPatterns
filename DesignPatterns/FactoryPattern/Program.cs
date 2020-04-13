@@ -6,7 +6,11 @@ namespace FactoryPattern
     {
         static void Main(string[] args)
         {
-            new PizzaStore(new SimplePizzaFactory()).OrderPizza("Cheese");
+            PizzaStore nyPizzaStore = new NYStylePizzaStore();
+            nyPizzaStore.OrderPizza("Cheese");
+            Console.WriteLine("-----------------");
+            PizzaStore chicagoPizzaStore = new ChicagoStylePizzaStore();
+            chicagoPizzaStore.OrderPizza("Pepperoni");
         }
     }
 }

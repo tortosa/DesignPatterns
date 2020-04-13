@@ -4,23 +4,23 @@ using System.Text;
 
 namespace FactoryPattern
 {
-    public class SimplePizzaFactory
+    public class NYStylePizzaStore : PizzaStore
     {
-        public Pizza CreatePizza(string type)
+        protected override Pizza CreatePizza(string type)
         {
-            Pizza pizza = new MargheritaPizza();
+            Pizza pizza = new NYStyleMargheritaPizza();
 
             if (type.Equals("cheese", StringComparison.InvariantCultureIgnoreCase))
             {
-                pizza = new CheesePizza();
+                pizza = new NYStyleCheesePizza();
             }
             else if (type.Equals("greek", StringComparison.InvariantCultureIgnoreCase))
             {
-                pizza = new GreekPizza();
+                pizza = new NYStyleGreekPizza();
             }
             else if (type.Equals("pepperoni", StringComparison.InvariantCultureIgnoreCase))
             {
-                pizza = new PepperoniPizza();
+                pizza = new NYStylePepperoniPizza();
             }
 
             return pizza;
