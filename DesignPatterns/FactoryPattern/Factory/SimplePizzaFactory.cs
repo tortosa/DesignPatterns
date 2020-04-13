@@ -4,9 +4,9 @@ using System.Text;
 
 namespace FactoryPattern
 {
-    public class Orderer
+    public class SimplePizzaFactory
     {
-        public static Pizza OrderPizza(string type)
+        public Pizza CreatePizza(string type)
         {
             Pizza pizza = new MargheritaPizza();
 
@@ -22,11 +22,6 @@ namespace FactoryPattern
             {
                 pizza = new PepperoniPizza();
             }
-
-            pizza.Prepare();
-            pizza.Bake();
-            pizza.Cut();
-            pizza.Box();
 
             return pizza;
         }
