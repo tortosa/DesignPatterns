@@ -1,28 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FactoryPattern
+﻿namespace FactoryPattern
 {
     public class NYStylePizzaStore : PizzaStore
     {
-        protected override Pizza CreatePizza(string type)
+        protected override Pizza CreatePizza(PizzaType type)
         {
-            Pizza pizza = new NYStyleMargheritaPizza();
-
-            if (type.Equals("cheese", StringComparison.InvariantCultureIgnoreCase))
+            Pizza pizza = type switch
             {
-                pizza = new NYStyleCheesePizza();
-            }
-            else if (type.Equals("greek", StringComparison.InvariantCultureIgnoreCase))
-            {
-                pizza = new NYStyleGreekPizza();
-            }
-            else if (type.Equals("pepperoni", StringComparison.InvariantCultureIgnoreCase))
-            {
-                pizza = new NYStylePepperoniPizza();
-            }
-
+                PizzaType.Cheese => new NYStyleCheesePizza(),
+                PizzaType.Greek => new NYStyleGreekPizza(),
+                PizzaType.Pepperoni => new NYStylePepperoniPizza(),
+                _ => new NYStyleMargheritaPizza(),
+            };
             return pizza;
         }
     }

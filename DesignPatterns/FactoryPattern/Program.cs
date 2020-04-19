@@ -7,10 +7,16 @@ namespace FactoryPattern
         static void Main(string[] args)
         {
             PizzaStore nyPizzaStore = new NYStylePizzaStore();
-            nyPizzaStore.OrderPizza("Cheese");
-            Console.WriteLine("-----------------");
             PizzaStore chicagoPizzaStore = new ChicagoStylePizzaStore();
-            chicagoPizzaStore.OrderPizza("Cheese");
+
+            PizzaType[] pizzaTypes = { PizzaType.Cheese, PizzaType.Greek, PizzaType.Pepperoni };
+
+            foreach (var type in pizzaTypes)
+            {
+                nyPizzaStore.OrderPizza(type);
+                Console.WriteLine("-----------------");
+                chicagoPizzaStore.OrderPizza(type);
+            }
         }
     }
 }

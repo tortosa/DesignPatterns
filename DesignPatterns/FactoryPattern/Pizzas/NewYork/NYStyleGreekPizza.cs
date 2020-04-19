@@ -4,15 +4,15 @@ using System.Text;
 
 namespace FactoryPattern
 {
-    public class ChicagoStylePepperoniPizza : Pizza
+    public class NYStyleGreekPizza : Pizza
     {
-        public ChicagoStylePepperoniPizza()
+        public NYStyleGreekPizza()
         {
-            name = "Chicago Style Pepperoni Pizza";
+            name = "NewYork Style Greek Pizza";
             dough = "Extra Thick Crust Dough";
             sauce = "Plum Tomato Sauce";
 
-            toppings.Add("Bacon");
+            toppings.Add("White Cheddar");
         }
     }
 }

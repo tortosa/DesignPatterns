@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FactoryPattern
+﻿namespace FactoryPattern
 {
     public abstract class PizzaStore
     {
-        public Pizza OrderPizza(string type)
+        public Pizza OrderPizza(PizzaType type)
         {
             var pizza = CreatePizza(type);
 
@@ -18,6 +14,6 @@ namespace FactoryPattern
             return pizza;
         }
 
-        protected abstract Pizza CreatePizza(string type);
+        protected abstract Pizza CreatePizza(PizzaType type);
     }
 }
